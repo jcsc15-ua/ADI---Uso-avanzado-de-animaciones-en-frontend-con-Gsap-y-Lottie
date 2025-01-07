@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación GSAP Stroke y Fill</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle id="circle" cx="100" cy="100" r="50" stroke="#000000" stroke-width="5" fill="#ffffff" />
+    </svg>
+
+    <script>
+        // Animación GSAP: cambiar stroke y fill
+        gsap.to("#circle", { stroke: "#ff0000", fill: "#00ff00", duration: 1 });
+    </script>
+</body>
+</html>

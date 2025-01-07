@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Dibujo de Líneas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+        <path id="path" d="M10 50 L390 50" stroke="blue" stroke-width="5" fill="none" />
+    </svg>
+
+    <script>
+        // Dibujo de líneas con GSAP
+        gsap.fromTo("#path",
+            { strokeDasharray: "300", strokeDashoffset: "300" },
+            { strokeDashoffset: 0, duration: 2 }
+        );
+    </script>
+</body>
+</html>
