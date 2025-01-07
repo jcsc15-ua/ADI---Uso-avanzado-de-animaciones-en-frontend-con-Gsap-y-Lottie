@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADI-Timeline</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <h1>Animaciones con GSAP</h1>
+    <h2>Elementos Timeline</h2>
+    <div id="boxTL1" style="width:50px; height:50px; background:purple;"></div>
+
+    <div id="boxTL2" style="width: 50px; height: 50px; background: red;"></div>
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="reverse">Reverse</button>
+    <button id="restart">Restart</button>
+    <button id="seek">Seek (1.5s)</button>
+
+    <script>
+        // FUNDAMENTOS DE GSAP - TIMELINE
+        // Ejemplo 1
+        const tl1 = gsap.timeline({
+            repeat: -1,   // Repite indefinidamente
+            yoyo: true,   // Vuelve a su estado inicial tras cada repetición
+        });
+    
+        // Añade animaciones a la línea de tiempo
+        tl1.to("#boxTL1", { x: 300, duration: 1, ease: "power1.inOut" }) // Movimiento en X
+            .to("#boxTL1", { scale: 1.5, opacity: 0.5, duration: 1 }, "+=0.5") // Escala y opacidad
+            .to("#boxTL1", { rotation: 360, duration: 1 }); // Rotación completa
+    
+        // Ejemplo 2
+        const tl2 = gsap.timeline({ paused: true }); // La línea de tiempo no se ejecuta automáticamente
+    
+        // Definimos las animaciones
+        tl2.to("#boxTL2", { x: 200, duration: 1 })        // Movimiento en X
+            .to("#boxTL2", { y: 100, duration: 1 })        // Movimiento en Y
+            .to("#boxTL2", { rotation: 360, duration: 1 }) // Rotación completa
+            .to("#boxTL2", { x: 0, y: 0, duration: 1 });   // Regresa al origen
+    
+        // Controles manuales
+        document.querySelector("#play").addEventListener("click", () => tl2.play());
+        document.querySelector("#pause").addEventListener("click", () => tl2.pause());
+        document.querySelector("#reverse").addEventListener("click", () => tl2.reverse());
+        document.querySelector("#restart").addEventListener("click", () => tl2.restart());
+        document.querySelector("#seek").addEventListener("click", () => tl2.seek(1.5)); // Salta a 1.5 segundos
+    </script>
+</body>
+</html>

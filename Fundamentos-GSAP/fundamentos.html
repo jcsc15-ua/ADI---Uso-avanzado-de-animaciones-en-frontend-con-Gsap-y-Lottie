@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADI-Fundamentos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <h1>Animaciones con GSAP</h1>
+    <!-- ELEMENTOS TWEENING DE GSAP -->
+    <h2>Elementos Tweening</h2>
+    <div id="box" style="width:50px; height:50px; background:red;"></div>
+
+    <div id="box2" style="width:50px; height:50px; background:blue;"></div>
+
+    <div id="box3" style="width:50px; height:50px; background:yellow;"></div>
+    <script>
+        // FUNDAMENTOS DE GSAP - TWEENING
+        // Animación: mueve un elemento 300px hacia la derecha en 2 segundos
+        gsap.to("#box", { x: 300, duration: 2 });
+
+        // Animación: comienza desde 300px hacia la derecha y regresa al estado original
+        gsap.from("#box2", { x: 300, duration: 2 });
+
+        // Animación: comienza desde 0px, se mueve a 200px en el eje Y
+        gsap.fromTo(
+            "#box3",
+            { y: 0 }, // Estado inicial
+            { y: 200, x: 200, duration: 2 } // Estado final
+        ); 
+    </script>
+</body>
+
+</html>
